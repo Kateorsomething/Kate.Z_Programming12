@@ -12,9 +12,6 @@ public class Circle extends TwoDShape {
     }
 
 
-    public double getRadius() {
-        return radius;
-    }
 
     /**
      * radius > 0

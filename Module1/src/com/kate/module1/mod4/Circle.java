@@ -1,12 +1,13 @@
 package com.kate.module1.mod4;
 
-public class Circle extends TwoDShape implements Rotate {
+public class Circle extends TwoDShape {
 
     public final double PI = 3.14;
     private double radius;
 
-    public Circle(double radius) {
+    public Circle(double radius, Colour colour) {
         this.radius = radius;
+        this.colour = colour;
         this.height = 2*radius;
         this.width = 2*radius;
     }
@@ -31,11 +32,5 @@ public class Circle extends TwoDShape implements Rotate {
         return "circle with radius " + radius +". colour:" + colour + ".";
     }
 
-    @Override
-    public void rotate90(){}
-    @Override
-    public void rotate180(){}
-    @Override
-    public void rotate(double degree){}
 
 }

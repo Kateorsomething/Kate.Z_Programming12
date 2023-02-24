@@ -4,7 +4,7 @@ public abstract class TwoDShape {
 
     public double width;
     public double height;
-    public double rotation;
+
 
     public TwoDShape(double width,double height) {
         this.width = width;
@@ -14,7 +14,6 @@ public abstract class TwoDShape {
     public TwoDShape() {
         this.height = 0;
         this.width = 0;
-        this.rotation = 0;
     }
 
 

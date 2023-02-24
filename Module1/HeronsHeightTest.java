@@ -1,6 +1,5 @@
 package com.kate.module1.mod7;
 
-import com.kate.module1.mod4.Triangle;
 import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,28 +15,27 @@ public class HeronsHeightTest {
 
     @Test
     public void normalTriangleHeight() {
-        Triangle triangle = new Triangle(4,5,6);
-        double expectedHeight = (triangle.getArea()*2)/triangle.side1;
+        Triangle triangle = new Triangle(4,5,6, Colour.NONE);
 
-        assertEquals(expectedHeight,triangle.heronsHeight());
+        assertEquals(5,Math.round(triangle.height));
     }
 
     @Test
     public void thinTriangleHeight() {
-        Triangle triangle = new Triangle(1,9,7);
-        assertEquals(-1,triangle.heronsHeight());
+        Triangle triangle = new Triangle(1,9,7,Colour.NONE);
+        assertEquals(-1,triangle.height);
     }
 
     @Test
     public void zeroTriangleHeight() {
-        Triangle triangle = new Triangle(-2,2,5);
-        assertEquals(-1,triangle.heronsHeight());
+        Triangle triangle = new Triangle(0,2,4,Colour.NONE);
+        assertEquals(-1,triangle.height);
     }
 
     @Test
     public void negativeTriangleHeight() {
-        Triangle triangle = new Triangle(-2,9,7);
-        assertEquals(-1,triangle.heronsHeight());
+        Triangle triangle = new Triangle(-2,2,5,Colour.NONE);
+        assertEquals(-1,triangle.height);
     }
 
 

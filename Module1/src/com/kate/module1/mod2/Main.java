@@ -6,9 +6,9 @@ public class Main {
 
         TwoDShape[] shapes = {new Triangle(3,2,2), new Circle(1)};
 
-        for (TwoDShape s : shapes) {
-            System.out.println(s);
-            System.out.println("area: " + s.getArea());
+        for (TwoDShape shape : shapes) {
+            System.out.println(shape);
+            System.out.println("area: " + shape.getArea());
         }
 
     }

@@ -18,7 +18,6 @@ public class TwoDShape {
 
     /**
      * width & height > 0
-     *
      * @return width*height
      */
     public double getArea() {
