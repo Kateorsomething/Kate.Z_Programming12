@@ -1,65 +1,103 @@
 package com.kate.module2.mod5;
 
 import java.util.*;
+import java.lang.*;
 
 public class caesarCipher {
 
-    public int key;
     public String input;
 
-    public HashMap<Integer,String> alphabet = new HashMap<>(){{
-        put(0," ");
-        for (int i = 0;i < 26 ; i ++) {
+    public final HashMap<Integer, Character> alphabet = new HashMap<>() {{
+        put(0, ' ');
+        for (int i = 0; i < 26; i++) {
             char[] a = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-            put(i+1, String.valueOf(a[i]));
+            put(i + 1, a[i]);
         }
     }};
+
 
     caesarCipher(String input) {
         this.input = input;
     }
 
 
-    public LinkedList<Integer> encode(int key) {
+    /**
+     * @param key
+     * @return coded message in String
+     */
 
-//1.take input(String) - > return numbers(String)
+    public String encode(int key) {
+
+        char[] stringInArray = this.input.toCharArray();
+
         LinkedList<Integer> stringInNum = new LinkedList<>();
-        for (int i = 0; i < this.input.length(); i++) {
-            if (Character.isWhitespace(this.input.charAt(i))) {
+        for (int i = 0; i < stringInArray.length; i++) {
+            if (Character.isWhitespace(stringInArray[i])) {
                 stringInNum.add(0);
             } else {
-                //add the corresponding number
-                for (Map.Entry<Integer, String> entry : alphabet.entrySet()) {
-                    if (Character.valueOf(this.input.charAt(i)).equals(entry.getValue())) {
+                for (Map.Entry<Integer, Character> entry : alphabet.entrySet()) {
+                    if (Objects.equals(stringInArray[i], entry.getValue())) {
                         stringInNum.add(entry.getKey());
                     }
                 }
             }
         }
 
-
-        // 2.return shifted #
-        Iterator iterator = stringInNum.iterator();
-        LinkedList<Integer> shiftedStringInNum = new LinkedList<>();
-
-        while (iterator.hasNext()) {
-            shiftedStringInNum.add(((int)iterator.next() + key) % 26);
+        for (int i = 0 ; i < stringInNum.size() ; i ++) {
+             if (stringInNum.get(i) == 0) {
+                 continue;
+             } else {
+                 stringInNum.set(i, (stringInNum.get(i) + key) % 26);
+             }
         }
-// 3. convert # back to string and return
 
-        return shiftedStringInNum;
+        String encoded = "";
+        for (Integer i : stringInNum) {
+            encoded = encoded + alphabet.get(i);
+        }
+        return encoded;
     }
 
 
+    /**
+     * @param key
+     * @return decoded message in String
+     */
+    public String decode(int key) {
 
+        char[] stringInArray = this.input.toCharArray();
 
-public String decode() {
-    return("");
+        LinkedList<Integer> stringInNum = new LinkedList<>();
+        for (int i = 0; i < stringInArray.length; i++) {
+            if (Character.isWhitespace(stringInArray[i])) {
+                stringInNum.add(0);
+            } else {
+                for (Map.Entry<Integer, Character> entry : alphabet.entrySet()) {
+                    if (Objects.equals(stringInArray[i], entry.getValue())) {
+                        stringInNum.add(entry.getKey());
+                    }
+                }
+            }
+        }
+
+        for (int i = 0 ; i < stringInNum.size() ; i ++) {
+            if (stringInNum.get(i) == 0) {
+                continue;
+            } else {
+                stringInNum.set(i, (stringInNum.get(i) - key) % 26);
+            }
+        }
+
+        String encoded = "";
+        for (Integer i : stringInNum) {
+            encoded = encoded + alphabet.get(i);
+        }
+        return encoded;
+    }
+
 }
 
 
-
-}
 
 
 

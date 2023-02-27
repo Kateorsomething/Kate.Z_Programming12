@@ -31,6 +31,12 @@ public class Planet {
     }
 
     @Override
+    public int hashCode() {
+        return this.designation.length();
+    }
+
+
+    @Override
     public String toString() {
         return "hashcode: " + this.hashCode() + ". designation: " + this.designation + ". type: " + this.type + ".";
     }

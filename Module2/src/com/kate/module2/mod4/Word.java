@@ -1,9 +1,5 @@
 package com.kate.module2.mod4;
 
-import java.io.*;
-import java.util.*;
-
-
 public class Word {
     String actualWord;
 

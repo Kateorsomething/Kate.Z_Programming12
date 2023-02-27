@@ -16,6 +16,7 @@ public class Main {
                 System.err.println(e.getMessage());
             }
 
+
         while (scanner.hasNext()) {
             Word word = new Word(scanner.next());
             uniqueWords.add(word.actualWord);

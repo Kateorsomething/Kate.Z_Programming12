@@ -5,7 +5,6 @@ import java.util.Comparator;
 public class sortByFace implements Comparator<cards> {
 
     //sorts by notFace -> face
-
     @Override
     public int compare(cards o1, cards o2) {
         if (o1.isFaceCard) {

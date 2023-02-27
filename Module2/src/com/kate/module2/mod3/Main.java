@@ -5,21 +5,16 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<cards> deckOfCards = new LinkedList<>();
-
-        for (int i = 1; i < 14; i++) {
-            deckOfCards.add(new cards(i, Suits.SPADES));
-            deckOfCards.add(new cards(i, Suits.HEARTS));
-            deckOfCards.add(new cards(i, Suits.DIAMONDS));
-            deckOfCards.add(new cards(i, Suits.CLUBS));
-        }
-
-        for (cards c : deckOfCards) {
-            System.out.println(c);
-        }
+        LinkedList<cards> deckOfCards = new LinkedList<>() {{
+                for (int i = 1; i < 14; i++) {
+                    add(new cards(i, Suits.SPADES));
+                    add(new cards(i, Suits.HEARTS));
+                    add(new cards(i, Suits.DIAMONDS));
+                    add(new cards(i, Suits.CLUBS));
+                }
+            }};
 
         System.out.println("-----------Sorted by suits------------");
-
 
         sortBySuits s = new sortBySuits();
         Collections.sort(deckOfCards,s);
@@ -36,7 +31,6 @@ public class Main {
         for (cards c : deckOfCards) {
             System.out.println(c);
         }
-
 
     }
 }
