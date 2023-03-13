@@ -1,4 +1,4 @@
-package com.zaremba.graphs;
+package com.kate.module3.mod3;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static ArrayList<Node> graph;
     public static String r = "";
+
     public static void main(String[] args) throws FileNotFoundException {
         setupTree();
         BFS(graph.get(0));
@@ -51,12 +52,12 @@ public class Main {
     private static void BFS(Node n){
         n.setVisited(true);
         System.out.println(n);
-        for (int i=0; i<n.getNodes().size(); i++){
+        for (int i=0; i<n.getNodes().size(); i++){  //iterate through all the nodes in a node object
             Integer v = (Integer) n.getNodes().get(i);
             Node c = getNode(v.intValue());
             if(!c.isVisited()){
-                if (r.indexOf(""+c.getKey())==-1)
-                    r+=c.getKey()+"";
+                if (r.indexOf(""+c.getKey())==-1) //if c.getKey() does not exist in r
+                    r+=c.getKey()+""; //append c.getKey() to r
             }
         }
         for (int i=0; i<n.getNodes().size(); i++){

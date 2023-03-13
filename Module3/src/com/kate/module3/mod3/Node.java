@@ -1,4 +1,4 @@
-package com.zaremba.graphs;
+package com.kate.module3.mod3;
 
 import java.util.ArrayList;
 import java.util.List;
