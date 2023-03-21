@@ -1,3 +1,5 @@
+package com.kate.module3.mod4;
+
 /**
  * This class represents a players batting statistics.  The following are definitions of the stats
  * games -> Games played
@@ -21,6 +23,8 @@ public class PlayerBattingStats {
     private int triples;
     private int homeRuns;
     private int rbi;
+    private double percentRuns;
+    private double percentOnBase;
 
     public PlayerBattingStats(String name, String team, int games, int atBats, int runs, int hits, int doubles, int triples, int homeRuns, int rbi) {
         this.name = name;
@@ -33,6 +37,9 @@ public class PlayerBattingStats {
         this.triples = triples;
         this.homeRuns = homeRuns;
         this.rbi = rbi;
+        this.percentRuns = (runs*100)/atBats;
+        this.percentOnBase = ((hits + doubles + triples)*100) / atBats;
+
     }
 
     public String getName() {
@@ -75,9 +82,17 @@ public class PlayerBattingStats {
         return rbi;
     }
 
+    public double getPercentRuns() {
+        return percentRuns;
+    }
+
+    public double getPercentOnBase() {
+        return percentOnBase;
+    }
+
     @Override
     public String toString() {
-        return "PlayerBattingStats{" +
+        return "PlayerBattingStats{ " +
                 "name='" + name + '\'' +
                 ", team='" + team + '\'' +
                 ", games=" + games +
@@ -88,6 +103,8 @@ public class PlayerBattingStats {
                 ", triples=" + triples +
                 ", homeRuns=" + homeRuns +
                 ", rbi=" + rbi +
-                '}';
+                ", percent runs=" + percentRuns + "%" +
+                ", percent on base=" + percentOnBase + "%" +
+                " }";
     }
 }

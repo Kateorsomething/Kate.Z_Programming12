@@ -1,3 +1,5 @@
+package com.kate.module3.mod4;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -11,6 +13,7 @@ public class Main {
      * creates a PlayerBattingStats object and adds it to the players list.  The CSV file
      * must be in the format of:
      * Name,Team,Gamesplayed,At bats, runs, hits, doubles, triples, home runs, rbi's
+     *
      * @param file containg the data
      */
     public static void parseCSVData(File file) throws FileNotFoundException {
@@ -36,10 +39,18 @@ public class Main {
     public static void main(String[] args) {
         players = new ArrayList<>();
         try {
-            parseCSVData(new File("PlayerData.csv"));
+            parseCSVData(new File("Module3/src/com/kate/module3/mod4/PlayerData.csv"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        for (PlayerBattingStats player : players) {
+            System.out.println(player);
+        }
+
+        System.out.println("----------------SORTED-------------------");
+
+        PlayerSorter sorter = new PlayerSorter();
+        sorter.sort(players,sorter.GAMESPLAYED);
         for (PlayerBattingStats player : players) {
             System.out.println(player);
         }

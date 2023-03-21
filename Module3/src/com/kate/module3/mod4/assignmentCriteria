@@ -1,0 +1,7 @@
+ There is a starter code there that contains a class that
+represents baseball player hitting stats.  There is a csv (comma separated value)
+file there that already has code to parse it and
+create a list of players that is to be sorted.  In the sorting class you will need
+ to write a public interface method that calls 5 internal
+methods to sort the players based on different criteria.  Use the example of a merge
+ sort from the lesson as a starting point.
