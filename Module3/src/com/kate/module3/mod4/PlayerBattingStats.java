@@ -10,6 +10,8 @@ package com.kate.module3.mod4;
  * triples -> Number of times the player the ball and reached second base
  * homeRuns -> Number of times the player got a home run
  * rbi -> Number of times the player got on base and allowed another runner to score
+ * percentRuns -> runs / atBats as a percentage
+ * percentOnBase -> (hits + doubles + triples) / atBats as a percentage
  */
 
 public class PlayerBattingStats {
@@ -39,7 +41,6 @@ public class PlayerBattingStats {
         this.rbi = rbi;
         this.percentRuns = (runs*100)/atBats;
         this.percentOnBase = ((hits + doubles + triples)*100) / atBats;
-
     }
 
     public String getName() {

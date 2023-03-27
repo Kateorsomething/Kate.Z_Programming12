@@ -50,8 +50,7 @@ public class Main {
         System.out.println("----------------SORTED-------------------");
 
         PlayerSorter sorter = new PlayerSorter();
-        sorter.sort(players,sorter.GAMESPLAYED);
-        for (PlayerBattingStats player : players) {
+        for (PlayerBattingStats player : sorter.sort(players,sorter.PERCENTONBASE)) {
             System.out.println(player);
         }
     }

@@ -3,14 +3,12 @@ package com.kate.module3.mod1;
 public class fibonacciSequence {
 
     /**
-     * @param n index of number in fibonacci sequence
-     * @return value of number
+     * @param n int index of number in fibonacci sequence
+     * @return int value of number
      */
     public static int fibonacci(int n) {
 
-        if (n == 1) {
-            return 0;
-        } else if (n == 2) {
+        if (n < 3) {
             return 1;
         }
 

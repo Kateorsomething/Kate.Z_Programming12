@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class PlayerSorter {
 
-    //The following fields are the different sort types:
     public static int GAMESPLAYED = 1;
     public static int ATBATS = 2;
     public static int RUNS = 3;
@@ -46,6 +45,7 @@ public class PlayerSorter {
         sort(leftSide, sortType);
         sort(rightSide, sortType);
 
+
         //merge
         switch (sortType) {
             case 1:
@@ -72,9 +72,8 @@ public class PlayerSorter {
 
 
     /**
-     * helper method. replaces list with leftSide & rightSide merged.
-     * sorted by games descending.
-     * @param list original list of player
+     * helper method: sort list by games descending
+     * @param list list of players to be sorted
      * @param leftSide left half of list
      * @param rightSide right half of list
      */
@@ -100,12 +99,12 @@ public class PlayerSorter {
             list.set(m , rightSide.get(r));
             r++; m++;
         }
+
     }
 
     /**
-     * helper method. replaces list with leftSide & rightSide merged.
-     * sorted by atBats descending.
-     * @param list original list of player
+     * helper method: sort list by atBats descending
+     * @param list list of players to be sorted
      * @param leftSide left half of list
      * @param rightSide right half of list
      */
@@ -135,9 +134,8 @@ public class PlayerSorter {
     }
 
     /**
-     * helper method. replaces list with leftSide & rightSide merged.
-     * sorted by runs descending.
-     * @param list original list of player
+     * helper method: sort list by runs descending
+     * @param list list of players to be sorted
      * @param leftSide left half of list
      * @param rightSide right half of list
      */
@@ -166,9 +164,8 @@ public class PlayerSorter {
 
     }
     /**
-     * helper method. replaces list with leftSide & rightSide merged.
-     * sorted by percentRuns descending.
-     * @param list original list of player
+     * helper method: sort list by percentRuns descending
+     * @param list list of players to be sorted
      * @param leftSide left half of list
      * @param rightSide right half of list
      */
@@ -196,9 +193,8 @@ public class PlayerSorter {
         }
     }
     /**
-     * helper method. replaces list with leftSide & rightSide merged.
-     * sorted by percentOnBase descending.
-     * @param list original list of player
+     * helper method: sort list by percentOnBase descending
+     * @param list list of players to be sorted
      * @param leftSide left half of list
      * @param rightSide right half of list
      */

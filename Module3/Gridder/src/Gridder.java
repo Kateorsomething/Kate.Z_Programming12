@@ -857,9 +857,10 @@ public class Gridder extends javax.swing.JFrame
         draw();
     }//GEN-LAST:event_jButton11ActionPerformed
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
         System.out.println("12");
-    }//GEN-LAST:event_jButton12ActionPerformed
+        draw();
+    }
+    //GEN-LAST:event_jButton12ActionPerformed
 
 
 
